@@ -1,8 +1,7 @@
+package Project;
+
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
 
 
 public class Tree<T> {
@@ -11,7 +10,6 @@ public class Tree<T> {
   public Tree(T rootData) {
     this.root = new TreeNode<T>(rootData);
   }
-
 
   private class TreeNode<T> {
     public T data;
@@ -31,9 +29,20 @@ public class Tree<T> {
 
   public String getTree() {
     StringBuilder sb = new StringBuilder();
-    Stack<TreeNode<T>> files = new Stack<>();
-    files.add(root);
-    sb.append(files.peek().toString() + "]\n");
+    getTreeHelper(root, sb, 0);
+    return sb.toString();
+  }
+
+  private void getTreeHelper(TreeNode<T> node, StringBuilder sb, int level) {
+    for(int i = 0; i < level; i++) {
+      sb.append("--");
+    }
+
+    sb.append(node.data).append("\n");
+
+    for (TreeNode<T> child : node.children) {
+      getTreeHelper(child, sb, level + 1);
+    }
   }
 
 

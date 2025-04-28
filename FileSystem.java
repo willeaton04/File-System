@@ -1,3 +1,6 @@
+package Project;
+
+import java.util.stream.Stream;
 
 public class FileSystem {
 
@@ -12,6 +15,19 @@ public class FileSystem {
   }
 
   public String display() {
-    return root.postOrderTraversal()
+    return "";
+    // TODO
   }
+
+  public String createFile(String fileName) {
+    return "";
+    //TODO
+  }
+
+  public String createFile(String fileName, Stream<String> data) {return "";}
+  public void deleteFile(String fileName) {}
+
+
+
+
 }

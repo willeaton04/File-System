@@ -12,6 +12,7 @@ public class Tree<T> {
     this.root = new TreeNode<T>(rootData);
   }
 
+
   private class TreeNode<T> {
     public T data;
     public List<TreeNode<T>> children;
